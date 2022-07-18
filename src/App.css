@@ -1,7 +1,32 @@
 .App {
   text-align: center;
+  background-color:cadetblue
+  
 }
+.img_div{
+  display: flex;
+  flex: 1;
+  margin:5px;
+  background-color:powderblue;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+ 
 
+}
+.details{
+  justify-content: space-between;
+  width: 300px;
+  height: 300px;
+  display: flex;
+}
+.title{
+  box-sizing:border-box
+}
+.img_div img{
+  width: 300px;
+  height: 200px;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
