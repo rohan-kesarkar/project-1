@@ -8,13 +8,13 @@ export default function ProductDetails() {
     //console.log("This is ",id.id)
   return (
     <>
-        <div  key={currProduct.id}>
+    <div className='img_div' key={currProduct.id}>
           <div className='details'>
           <img src={currProduct.images[0]} alt="img"/>
             <img src={currProduct.images[1]} alt="img"/>
             <img src={currProduct.images[2]} alt="img"/>
           </div>
-            <div className='title'>
+            <div style={{justifyContent:"center", paddingTop:"400px"}} className='title'>
             Title: {currProduct.title}
            <br/>
             Description: {currProduct.description}
@@ -31,13 +31,9 @@ export default function ProductDetails() {
             <br/>
             Category: {currProduct.category}
             </div>
-          
-            
-            
+     </div>
         
-        </div>
-        
-    
+      
     </>
   )
 }
