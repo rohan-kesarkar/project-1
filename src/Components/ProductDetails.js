@@ -1,16 +1,21 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { useParams } from 'react-router-dom'
 import Records from '../product.json'
-import { useNavigate } from 'react-router-dom';
+//import { useNavigate } from 'react-router-dom'
+
 export default function ProductDetails() {
     const id = useParams()
-
-    
-  const navigate = useNavigate();
-
+    // const navigate = useNavigate()
+  
     const currProduct = Records.products.find(records=>records.id === parseInt(id.id))
+    const [product, setProduct] = useState([currProduct])
     //console.log("This is ",id.id)
-
+    const addProduct = ()=>{
+      setProduct((preProduct)=>
+      [...preProduct, product]
+      )
+    }
+console.log("Thi is",addProduct)
     
 
   return (
@@ -41,7 +46,7 @@ export default function ProductDetails() {
             </div>
             <div key={currProduct.id}>
 
-            <button onClick={()=>{navigate(`/cart`)}}>Add to cart</button>
+            <button onClick={addProduct}>Add to cart</button>
             </div>
      </div>
         
