@@ -16,12 +16,7 @@ export default function Navbar(props) {
     <div style={{height:"60px",backgroundColor:"lightgray"}}>
        <div style={show}>
          <h3 >Home</h3>
-        
-         {/* {filteredRecord?.map((a)=>(
-          <p>{a} </p>
-         ))} */}
-        
-         <div>
+          <div>
          <button  style={{ display: "corner"}} ><img src="https://clipground.com/images/icon-cart-clipart-2.jpg" alt="cart" onClick={()=>{navigate(`/cart`)}}  style={{width: "50px",height: "50px", display: "corner"}} /></button>
          </div>
        

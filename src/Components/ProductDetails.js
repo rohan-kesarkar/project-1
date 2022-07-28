@@ -8,14 +8,19 @@ export default function ProductDetails() {
     // const navigate = useNavigate()
   
     const currProduct = Records.products.find(records=>records.id === parseInt(id.id))
-    const [product, setProduct] = useState([currProduct])
+    const [cart, setCart] = useState([])
     //console.log("This is ",id.id)
-    const addProduct = ()=>{
-      setProduct((preProduct)=>
-      [...preProduct, product]
-      )
-    }
-console.log("Thi is",addProduct)
+    const AddToCart = ()=>{
+      const allProducts=JSON.parse(localStorage.getItem('object') || "")
+      const object = {
+        img: currProduct.thumbnail,
+        price: currProduct.price
+      }
+      allProducts.push(object)
+      setCart([...cart,localStorage.setItem("object", JSON.stringify(allProducts))])
+     }
+  
+
     
 
   return (
@@ -46,7 +51,7 @@ console.log("Thi is",addProduct)
             </div>
             <div key={currProduct.id}>
 
-            <button onClick={addProduct}>Add to cart</button>
+            <button onClick={AddToCart}>Add to cart</button>
             </div>
      </div>
         
